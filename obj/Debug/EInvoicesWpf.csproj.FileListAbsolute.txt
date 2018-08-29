@@ -1,0 +1,15 @@
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\bin\Debug\EInvoicesWpf.exe.config
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\bin\Debug\EInvoicesWpf.exe
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\bin\Debug\EInvoicesWpf.pdb
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\EInvoicesWpf.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\MainWindow.g.cs
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\App.g.cs
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\EInvoicesWpf_MarkupCompile.cache
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\EInvoicesWpf_MarkupCompile.lref
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\MainWindow.baml
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\EInvoicesWpf.g.resources
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\EInvoicesWpf.Properties.Resources.resources
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\EInvoicesWpf.csproj.GenerateResource.Cache
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\EInvoicesWpf.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\EInvoicesWpf.exe
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\EInvoicesWpf.pdb
