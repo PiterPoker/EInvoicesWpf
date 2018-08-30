@@ -30,9 +30,11 @@ namespace EInvoicesWpf
 
         }
 
+        Label label = new Label();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            colorBtm.Foreground = Brushes.Brown;
+            label.Foreground = Brushes.Blue;
         }
     }
 }

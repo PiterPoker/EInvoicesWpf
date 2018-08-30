@@ -33,12 +33,15 @@
             <Button Height="50" DockPanel.Dock="Top" Margin="10,5" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="22" FontFamily="Segoe Script" FontWeight="Bold" HorizontalContentAlignment="Center" Foreground="White">Шаг 2</Button>
             <Button Height="50" DockPanel.Dock="Top" Margin="10,5" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="22" FontFamily="Segoe Script" FontWeight="Bold" HorizontalContentAlignment="Center" Foreground="White">Шаг 3</Button>
             <Button Height="50" DockPanel.Dock="Top" Margin="10,5" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="22" FontFamily="Segoe Script" FontWeight="Bold" HorizontalContentAlignment="Center" Foreground="White">Шаг 4</Button>
-            <Button Height="50" DockPanel.Dock="Top" Margin="10,5" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="22" FontFamily="Segoe Script" FontWeight="Bold" HorizontalContentAlignment="Center" Foreground="White" Click="Button_Click">
+            <Button x:Name="colorBtm" Height="50" DockPanel.Dock="Top" Margin="10,5" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="22" FontFamily="Segoe Script" FontWeight="Bold" Foreground="White" Click="Button_Click">Шаг 5
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{x:Null}"></Border>
+                        <Grid>
+                            <Label Content="{TemplateBinding Content}"
+                               VerticalAlignment="Stretch" Foreground="White" Cursor="Hand" Margin="39,3,38,2"/>
+                        </Grid>
                     </ControlTemplate>
-                </Button.Template> Шаг 5
+                </Button.Template>
             </Button>
         </DockPanel>
 
