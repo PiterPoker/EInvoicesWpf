@@ -6,26 +6,7 @@
         xmlns:local="clr-namespace:EInvoicesWpf"
         mc:Ignorable="d"
         Title="EInvoice" Height="500" Width="750" MinWidth="750" MinHeight="500">
-    <Window.Resources>
-        <Style TargetType="Button" x:Key="BlackAndWhite">
-            <Setter Property="Control.FontFamily" Value="Segoe Script" />
-            <Setter Property="Control.Background" Value="{x:Null}" />
-            <Setter Property="Control.Foreground" Value="White" />
-            <Setter Property="Control.Margin" Value="10,5" />
-            <Setter Property="Control.FontSize" Value="22" />
-            <Setter Property="Control.BorderBrush" Value="{x:Null}" />
-            <Setter Property="Control.Cursor" Value="Hand" />
-            <Setter Property="Control.FontWeight" Value="Bold" />
-            <Setter Property="Control.HorizontalContentAlignment" Value="Center" />
-            <Setter Property="Control.Focusable" Value="False" />
-            <Setter Property="Control.Height" Value="50" />
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Foreground" Value="Red" />
-                    <Setter Property="Focusable" Value="False" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
+    <Window.Resources>        
         
     </Window.Resources>
     <Grid ShowGridLines="True" Background="White">
@@ -39,11 +20,11 @@
         </Grid.ColumnDefinitions>
         <Label Grid.Column="0" Grid.Row="0" Background="#FF3470D8" Foreground="White" FontSize="24" FontWeight="Bold" FontFamily="Segoe Script" VerticalContentAlignment="Stretch" Grid.ColumnSpan="2" HorizontalContentAlignment="Center">EInvoice</Label>
         <DockPanel Background="#FF3470D8" LastChildFill="False" Grid.Row="1">
-            <Button DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 1</Button>
-            <Button DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 2</Button>
-            <Button DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 3</Button>
-            <Button Style="{StaticResource BlackAndWhite}" DockPanel.Dock="Top">Шаг 4</Button>
-            <Button Style="{StaticResource BlackAndWhite}" x:Name="colorBtm" DockPanel.Dock="Top" Click="Button_Click">Шаг 5</Button>
+            <Button x:Name="step1Btn" Click="step1Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 1</Button>
+            <Button x:Name="step2Btn" Click="step2Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 2</Button>
+            <Button x:Name="step3Btn" Click="step3Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 3</Button>
+            <Button x:Name="step4Btn" Click="step4Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 4</Button>
+            <Button x:Name="step5Btn" Click="step5Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 5</Button>
         </DockPanel>
 
     </Grid>

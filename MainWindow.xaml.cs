@@ -28,13 +28,42 @@ namespace EInvoicesWpf
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
 
+        }      
+        
+        private void SelectBtn(int index)
+        {
+            List<Button> brushList = new List<Button>() { step1Btn,
+                step2Btn,
+                step3Btn,
+                step4Btn,
+                step5Btn };
+            for (int i = 0; i < brushList.Count; i++)
+                if (i != index) { brushList[i].Foreground = Brushes.White; } else { brushList[i].Foreground = Brushes.Red; }
         }
 
-        Label label = new Label();
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void step1Btn_Click(object sender, RoutedEventArgs e)
         {
-            colorBtm.Foreground = Brushes.Brown;
-            label.Foreground = Brushes.Blue;
+            SelectBtn(0);
+        }
+
+        private void step2Btn_Click(object sender, RoutedEventArgs e)
+        {
+            SelectBtn(1);
+        }
+
+        private void step3Btn_Click(object sender, RoutedEventArgs e)
+        {
+            SelectBtn(2);
+        }
+
+        private void step4Btn_Click(object sender, RoutedEventArgs e)
+        {
+            SelectBtn(3);
+        }
+
+        private void step5Btn_Click(object sender, RoutedEventArgs e)
+        {
+            SelectBtn(4);
         }
     }
 }
