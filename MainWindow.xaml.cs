@@ -32,13 +32,14 @@ namespace EInvoicesWpf
         
         private void SelectBtn(int index)
         {
-            List<Button> brushList = new List<Button>() { step1Btn,
-                step2Btn,
-                step3Btn,
-                step4Btn,
-                step5Btn };
-            for (int i = 0; i < brushList.Count; i++)
-                if (i != index) { brushList[i].Foreground = Brushes.White; } else { brushList[i].Foreground = Brushes.Red; }
+            
+            //List<Button> brushList = new List<Button>() { step1Btn,
+            //    step2Btn,
+            //    step3Btn,
+            //    step4Btn,
+            //    step5Btn };
+            //for (int i = 0; i < brushList.Count; i++)
+            //    if (i != index) { brushList[i].Foreground = Brushes.White; } else { brushList[i].Foreground = Brushes.Red; }
         }
 
         private void step1Btn_Click(object sender, RoutedEventArgs e)
@@ -64,6 +65,23 @@ namespace EInvoicesWpf
         private void step5Btn_Click(object sender, RoutedEventArgs e)
         {
             SelectBtn(4);
+        }
+
+        private void calendar1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (calendar1.SelectedDates.Count > 0)
+            {
+                if (calendar1.SelectedDates[0].Date > calendar1.SelectedDates[calendar1.SelectedDates.Count - 1].Date)
+                {
+                    DateEnd.Content = calendar1.SelectedDates[calendar1.SelectedDates.Count - 1].ToString();
+                    DateStart.Content = calendar1.SelectedDates[0].ToString();
+                }
+                else
+                {
+                    DateStart.Content = calendar1.SelectedDates[calendar1.SelectedDates.Count - 1].ToString();
+                    DateEnd.Content = calendar1.SelectedDates[0].ToString();
+                }
+            }
         }
     }
 }

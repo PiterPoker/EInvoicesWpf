@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\App.xaml
-21636437593
+31609595321
 
 9-1198882737
 13-1454942768
-AppStyle\ButtonStyle.xaml;MainWindow.xaml;
+AppStyle\ButtonStyle.xaml;AppStyle\CalendarStyle.xaml;MainWindow.xaml;
 
 False
 
