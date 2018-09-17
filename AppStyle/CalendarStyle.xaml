@@ -8,4 +8,12 @@
         <Setter Property="Control.HorizontalAlignment" Value="Center" />
         <Setter Property="Control.BorderBrush" Value="#FF3470D8" />
     </Style>
+    <LinearGradientBrush x:Key="CalendarStyle" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}" Offset="0"/>
+        <GradientStop Color="{DynamicResource {x:Static SystemColors.GradientActiveCaptionColorKey}}" Offset="0.16"/>
+        <GradientStop Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" Offset="0.339"/>
+        <GradientStop Color="White" Offset="1"/>
+        <GradientStop Color="#FF3470D8"/>
+        <GradientStop Color="#FF3470D8" Offset="0.127"/>
+    </LinearGradientBrush>
 </ResourceDictionary>
