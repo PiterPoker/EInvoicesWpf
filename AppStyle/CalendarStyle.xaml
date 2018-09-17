@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:EInvoicesWpf.AppStyle">
+    <Style TargetType="Calendar" x:Key="CalendarStyle">
+        <Setter Property="Control.HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+        <Setter Property="Control.VerticalAlignment" Value="Center" />
+        <Setter Property="Control.HorizontalAlignment" Value="Center" />
+        <Setter Property="Control.BorderBrush" Value="#FF3470D8" />
+    </Style>
+</ResourceDictionary>

@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:EInvoicesWpf"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/AppStyle/ButtonStyle.xaml"/>
+                <ResourceDictionary Source="/AppStyle/CalendarStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -13,3 +13,5 @@ C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\ob
 C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\EInvoicesWpf.csproj.CoreCompileInputs.cache
 C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\EInvoicesWpf.exe
 C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\EInvoicesWpf.pdb
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\AppStyle\ButtonStyle.baml
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\App.baml
