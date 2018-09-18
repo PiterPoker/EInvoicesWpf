@@ -1,0 +1,29 @@
+﻿<Page x:Class="EInvoicesWpf.Step1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EInvoicesWpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="Step1">
+
+        <Grid Grid.Column="1" Grid.Row="1" ShowGridLines="True" Background="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50*"></RowDefinition>
+                <RowDefinition Height="450*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Calendar Style="{StaticResource CalendarStyle}" Grid.Row="1" x:Name="calendar1" FirstDayOfWeek="Monday" SelectionMode="MultipleRange"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib" Margin="0" MouseMove="calendar1_MouseMove" Background="{StaticResource CalendarLineStyle}" KeyUp="calendar1_KeyUp" />
+            <DockPanel Grid.Row="1" LastChildFill="False" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Button Grid.Row="1" x:Name="nextBtn" Click="nextBtn_Click" Style="{StaticResource ButtonPageStyle}" Content="Далее" />
+            </DockPanel>
+            <DockPanel Grid.Row="0" LastChildFill="False">
+                <Label x:Name="DateStart">z</Label>
+                <Label x:Name="DateEnd">z</Label>
+            </DockPanel>
+        </Grid>
+</Page>

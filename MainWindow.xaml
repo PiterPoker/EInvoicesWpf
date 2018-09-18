@@ -26,31 +26,7 @@
             <Button x:Name="step4Btn" Click="step4Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 4</Button>
             <Button x:Name="step5Btn" Click="step5Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 5</Button>
         </DockPanel>
-        <Grid Grid.Column="1" Grid.Row="1" ShowGridLines="True" Background="White">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50*"></RowDefinition>
-                <RowDefinition Height="450*"></RowDefinition>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="300*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Calendar Style="{StaticResource CalendarStyle}" Grid.Row="1" x:Name="calendar1" FirstDayOfWeek="Monday" SelectionMode="MultipleRange"
-        xmlns:sys="clr-namespace:System;assembly=mscorlib" Margin="0" MouseMove="calendar1_MouseMove">
-                <Calendar.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="{DynamicResource {x:Static SystemColors.ActiveCaptionColorKey}}" Offset="0"/>
-                        <GradientStop Color="{DynamicResource {x:Static SystemColors.GradientActiveCaptionColorKey}}" Offset="0.16"/>
-                        <GradientStop Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" Offset="0.339"/>
-                        <GradientStop Color="White" Offset="1"/>
-                        <GradientStop Color="#FF3470D8"/>
-                        <GradientStop Color="#FF3470D8" Offset="0.127"/>
-                    </LinearGradientBrush>
-                </Calendar.Background>
-            </Calendar>
-            <DockPanel Grid.Row="0" LastChildFill="False">
-                <Label x:Name="DateStart">z</Label>
-                <Label x:Name="DateEnd">z</Label>
-            </DockPanel>
-        </Grid>        
+
+        <Frame x:Name = "frameMain" Grid.Row="1" Grid.Column="1" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
