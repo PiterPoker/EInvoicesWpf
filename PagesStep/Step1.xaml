@@ -8,22 +8,26 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="Step1">
 
-        <Grid Grid.Column="1" Grid.Row="1" ShowGridLines="True" Background="White">
+    <Grid x:Name="grid" Grid.Column="1" Grid.Row="1" ShowGridLines="True" Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50*"></RowDefinition>
-                <RowDefinition Height="450*"></RowDefinition>
+                <RowDefinition Height="50*"></RowDefinition>
+                <RowDefinition Height="400*"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="300*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Calendar Style="{StaticResource CalendarStyle}" Grid.Row="1" x:Name="calendar1" FirstDayOfWeek="Monday" SelectionMode="MultipleRange"
+            <Calendar Style="{StaticResource CalendarStyle}" Grid.Row="2" x:Name="calendar1" FirstDayOfWeek="Monday" SelectionMode="MultipleRange"
         xmlns:sys="clr-namespace:System;assembly=mscorlib" Margin="0" MouseMove="calendar1_MouseMove" Background="{StaticResource CalendarLineStyle}" KeyUp="calendar1_KeyUp" />
-            <DockPanel Grid.Row="1" LastChildFill="False" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-            <Button Grid.Row="1" x:Name="nextBtn" Click="nextBtn_Click" Style="{StaticResource ButtonPageStyle}" Content="Далее" />
+            <DockPanel Grid.Row="2" LastChildFill="False" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Button x:Name="nextBtn" Click="nextBtn_Click" Style="{StaticResource ButtonPageStyle}" Content="Далее" />
             </DockPanel>
-            <DockPanel Grid.Row="0" LastChildFill="False">
-                <Label x:Name="DateStart">z</Label>
-                <Label x:Name="DateEnd">z</Label>
-            </DockPanel>
+        <Label Grid.Row="0" Style="{StaticResource LableStyle}" HorizontalContentAlignment="Center">Выберите дату</Label>
+        <DockPanel x:Name="dokPanelVis" Grid.Row="1" LastChildFill="False" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden">
+            <Label Style="{StaticResource LableStyle}">С </Label>
+            <Label Style="{StaticResource LableStyle}" x:Name="DateStart" />
+            <Label Style="{StaticResource LableStyle}"> по </Label>
+            <Label Style="{StaticResource LableStyle}" x:Name="DateEnd" />
+        </DockPanel>
         </Grid>
 </Page>

@@ -35,3 +35,4 @@ C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\ob
 C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\PagesStep\Step3.baml
 C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\PagesStep\Step4.baml
 C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\PagesStep\Step5.baml
+C:\Users\Alex\Documents\Visual Studio 2017\Projects\EInvoicesWpf\EInvoicesWpf\obj\Debug\AppStyle\LableStyle.baml

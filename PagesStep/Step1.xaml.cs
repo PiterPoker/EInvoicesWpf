@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -25,6 +26,7 @@ namespace EInvoicesWpf
         {
             InitializeComponent();
         }
+        
         private void calendar1_MouseMove(object sender, MouseEventArgs e)
         {
             cheakDate();
@@ -36,14 +38,18 @@ namespace EInvoicesWpf
             {
                 if (calendar1.SelectedDates[0].Date > calendar1.SelectedDates[calendar1.SelectedDates.Count - 1].Date)
                 {
-                    DateStart.Content = calendar1.SelectedDates[calendar1.SelectedDates.Count - 1].ToString();
-                    DateEnd.Content = calendar1.SelectedDates[0].ToString();
+                    DateStart.Content = calendar1.SelectedDates[calendar1.SelectedDates.Count - 1].ToString("dd.MM.yyyy")+" г.";
+                    DateEnd.Content = calendar1.SelectedDates[0].ToString("dd.MM.yyyy") + " г.";
                 }
                 else
                 {
-                    DateEnd.Content = calendar1.SelectedDates[calendar1.SelectedDates.Count - 1].ToString();
-                    DateStart.Content = calendar1.SelectedDates[0].ToString();
+                    DateEnd.Content = calendar1.SelectedDates[calendar1.SelectedDates.Count - 1].ToString("dd.MM.yyyy") + " г.";
+                    DateStart.Content = calendar1.SelectedDates[0].ToString("dd.MM.yyyy") + " г.";
                 }
+                dokPanelVis.Visibility = Visibility.Visible;
+                Step3.selectedDates = calendar1;
+                if (Mouse.Captured is CalendarItem)
+                { Mouse.Capture(null); }
             }
         }
 
@@ -54,6 +60,7 @@ namespace EInvoicesWpf
 
         private void nextBtn_Click(object sender, RoutedEventArgs e)
         {
+            cheakDate();
             NavigationService.Navigate(new Uri("/PagesStep/Step2.xaml", UriKind.Relative));
         }
     }

@@ -12,13 +12,14 @@
     <Grid ShowGridLines="True" Background="White">
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"></RowDefinition>
-            <RowDefinition Height="450*"></RowDefinition>
+            <RowDefinition Height="430*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="75*"></ColumnDefinition>
             <ColumnDefinition Width="225*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label Grid.Column="0" Grid.Row="0" Background="#FF3470D8" Foreground="White" FontSize="24" FontWeight="Bold" FontFamily="Segoe Script" VerticalContentAlignment="Stretch" Grid.ColumnSpan="2" HorizontalContentAlignment="Center">EInvoice</Label>
+        <Label Grid.Column="0" Grid.Row="0" Background="#FF3470D8" Foreground="White" FontSize="24" FontWeight="Bold" FontFamily="Segoe Script" VerticalContentAlignment="Stretch" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" x:Name="LabelStatus">EInvoice</Label>
         <DockPanel Background="#FF3470D8" LastChildFill="False" Grid.Row="1">
             <Button x:Name="step1Btn" Click="step1Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 1</Button>
             <Button x:Name="step2Btn" Click="step2Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 2</Button>
@@ -28,5 +29,12 @@
         </DockPanel>
 
         <Frame x:Name = "frameMain" Grid.Row="1" Grid.Column="1" NavigationUIVisibility="Hidden"/>
+        <DockPanel Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+            <StatusBar DockPanel.Dock="Bottom" Background="#FF3470D8">
+                <StatusBarItem>
+                    <TextBlock x:Name="statusTxt" Foreground="White"  >Всего запусков программы: </TextBlock>
+                </StatusBarItem>
+            </StatusBar>
+        </DockPanel>
     </Grid>
 </Window>

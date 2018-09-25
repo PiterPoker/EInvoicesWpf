@@ -20,9 +20,25 @@ namespace EInvoicesWpf.PagesStep
     /// </summary>
     public partial class Step3 : Page
     {
+        static public Calendar selectedDates { get; set; }
+
         public Step3()
         {
             InitializeComponent();
+            ViewDate();
+        }
+
+        void ViewDate() {
+            try
+            {
+                statusDate.Content = selectedDates.SelectedDates[0].ToString("dd.MM.yyyy") + " г.";
+                statusDate.Content += selectedDates.SelectedDates[selectedDates.SelectedDates.Count - 1].ToString("dd.MM.yyyy") + " г.";
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Не выбрана дата! \n" + ex.Message);
+            }
         }
 
         private void nextBtn_Click(object sender, RoutedEventArgs e)

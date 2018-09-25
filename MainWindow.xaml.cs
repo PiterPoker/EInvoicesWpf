@@ -25,13 +25,10 @@ namespace EInvoicesWpf
         {
             InitializeComponent();
             frameMain.Content = new Step1();
+            Properties.Settings.Default.run_app++; //Добавляем +1 к кол-ву запусков программы.
+            statusTxt.Text = "Всего запусков программы: " + Properties.Settings.Default.run_app.ToString();
         }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+        
         private void step1Btn_Click(object sender, RoutedEventArgs e)
         {
             frameMain.Content = new Step1();
@@ -55,6 +52,11 @@ namespace EInvoicesWpf
         private void step5Btn_Click(object sender, RoutedEventArgs e)
         {
             frameMain.Content = new Step5();
+        }
+
+        private void txtEditor_SelectionChanged(object sender, RoutedEventArgs e)
+        {
+            statusTxt.Text = Properties.Settings.Default.run_app.ToString();
         }
     }
 }

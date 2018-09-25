@@ -9,6 +9,7 @@
                 <ResourceDictionary Source="/AppStyle/ButtonStyle.xaml"/>
                 <ResourceDictionary Source="/AppStyle/CalendarStyle.xaml"/>
                 <ResourceDictionary Source="/AppStyle/ButtonPageStyle.xaml"/>
+                <ResourceDictionary Source="/AppStyle/LableStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
