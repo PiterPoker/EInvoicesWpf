@@ -21,7 +21,7 @@
             <Button Grid.Row="1" x:Name="nextBtn" Click="nextBtn_Click" Style="{StaticResource ButtonPageStyle}" Content="Далее" />
         </DockPanel>
         <DockPanel Grid.Row="0" LastChildFill="False">
-            <Label x:Name="DateStart">Step2</Label>
+            <Label x:Name="DateStart" Style="{StaticResource LableStyle}"></Label>
         </DockPanel>
     </Grid>
 </Page>

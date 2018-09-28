@@ -37,7 +37,7 @@ namespace EInvoicesWpf.PagesStep
             catch (Exception ex)
             {
 
-                MessageBox.Show("Не выбрана дата! \n" + ex.Message);
+                MessageBox.Show("Выберите дату! \n" + ex.Message);
             }
         }
 

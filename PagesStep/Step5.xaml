@@ -20,7 +20,7 @@
             <Button Grid.Row="1" x:Name="backBtn" Click="backBtn_Click" Style="{StaticResource ButtonPageStyle}" Content="Назад" />
         </DockPanel>
         <DockPanel Grid.Row="0" LastChildFill="False">
-            <Label x:Name="DateStart">Step5</Label>
+            <Label Style="{StaticResource LableStyle}" x:Name="DateStart">Step5</Label>
         </DockPanel>
     </Grid>
 </Page>

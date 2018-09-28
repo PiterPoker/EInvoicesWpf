@@ -32,9 +32,10 @@
         <DockPanel Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
             <StatusBar DockPanel.Dock="Bottom" Background="#FF3470D8">
                 <StatusBarItem>
-                    <TextBlock x:Name="statusTxt" Foreground="White"  >Всего запусков программы: </TextBlock>
+                    <TextBlock x:Name="statusTxt" Foreground="White" />
                 </StatusBarItem>
             </StatusBar>
         </DockPanel>
+        <Button Style="{StaticResource SettingButton}" Margin="0,5,10,5" Grid.Column="1" HorizontalAlignment="Right" Width="40"/>
     </Grid>
 </Window>

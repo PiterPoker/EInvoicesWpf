@@ -27,6 +27,7 @@ namespace EInvoicesWpf
             frameMain.Content = new Step1();
             Properties.Settings.Default.run_app++; //Добавляем +1 к кол-ву запусков программы.
             statusTxt.Text = "Всего запусков программы: " + Properties.Settings.Default.run_app.ToString();
+            Properties.Settings.Default.Save();  // Сохраняем переменные.
         }
         
         private void step1Btn_Click(object sender, RoutedEventArgs e)

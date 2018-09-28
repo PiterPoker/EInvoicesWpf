@@ -5,25 +5,45 @@
         <Setter Property="Control.Background" Value="{x:Null}" />
         <Setter Property="Control.Foreground" Value="White" />
         <Setter Property="Control.Margin" Value="10,5" />
-        <Setter Property="Control.FontSize" Value="22" />
+        <Setter Property="Control.FontSize" Value="20" />
         <Setter Property="Control.BorderBrush" Value="{x:Null}" />
         <Setter Property="Control.Cursor" Value="Hand" />
         <Setter Property="Control.FontWeight" Value="Bold" />
         <Setter Property="Control.HorizontalContentAlignment" Value="Center" />
         <Setter Property="Control.Focusable" Value="False" />
-        <Setter Property="Control.Height" Value="50" />
+        <Setter Property="Control.Height" Value="40" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid RenderTransformOrigin=".5,.5">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal"/>
+                                <VisualState Name="MouseOver"/>
+                                <VisualState Name="Pressed">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="scaleTransform" Storyboard.TargetProperty="ScaleX" To=".9" Duration="0"/>
+                                        <DoubleAnimation Storyboard.TargetName="scaleTransform" Storyboard.TargetProperty="ScaleY" To=".9" Duration="0"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState Name="Disabled"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform x:Name="scaleTransform"/>
+                            </TransformGroup>
+                        </Grid.RenderTransform>
+                        <Border
           x:Name="Border" 
           CornerRadius="2"
           BorderThickness="1">
-                        <ContentPresenter
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            RecognizesAccessKey="False" />
-                    </Border>
+                        </Border>
+                        <Viewbox>
+                            <ContentPresenter Margin="{TemplateBinding Padding}"/>
+                        </Viewbox>
+                    </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
