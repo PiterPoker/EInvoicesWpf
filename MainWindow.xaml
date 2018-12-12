@@ -4,16 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EInvoicesWpf"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesignConverters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf"
+        
         mc:Ignorable="d"
         Title="EInvoice" Height="500" Width="750" MinWidth="750" MinHeight="500">
     <Window.Resources>
-
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Shadows.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToggleButton.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
-    <Grid ShowGridLines="True" Background="White">
+    <Grid Background="White">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="60*"></RowDefinition>
             <RowDefinition Height="430*"></RowDefinition>
-            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="25*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="75*"></ColumnDefinition>
@@ -21,21 +34,62 @@
         </Grid.ColumnDefinitions>
         <Label Grid.Column="0" Grid.Row="0" Background="#FF3470D8" Foreground="White" FontSize="24" FontWeight="Bold" FontFamily="Segoe Script" VerticalContentAlignment="Stretch" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" x:Name="LabelStatus">EInvoice</Label>
         <DockPanel Background="#FF3470D8" LastChildFill="False" Grid.Row="1">
-            <Button x:Name="step1Btn" Click="step1Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 1</Button>
-            <Button x:Name="step2Btn" Click="step2Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 2</Button>
-            <Button x:Name="step3Btn" Click="step3Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 3</Button>
-            <Button x:Name="step4Btn" Click="step4Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 4</Button>
-            <Button x:Name="step5Btn" Click="step5Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 5</Button>
+            <Button IsEnabled="False" x:Name="step1Btn" Click="step1Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 1</Button>
+            <Button IsEnabled="False" x:Name="step2Btn" Click="step2Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 2</Button>
+            <Button IsEnabled="False" x:Name="step3Btn" Click="step3Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Шаг 3</Button>
+            <Button x:Name="step4Btn" Click="step4Btn_Click" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}">Отчет</Button>
+            <Button Visibility="Hidden" x:Name="step5Btn" DockPanel.Dock="Top" Style="{StaticResource BlackAndWhite}" Click="step5Btn_Click">Шаг 5</Button>
         </DockPanel>
 
         <Frame x:Name = "frameMain" Grid.Row="1" Grid.Column="1" NavigationUIVisibility="Hidden"/>
         <DockPanel Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
             <StatusBar DockPanel.Dock="Bottom" Background="#FF3470D8">
                 <StatusBarItem>
-                    <TextBlock x:Name="statusTxt" Foreground="White" />
+                    <TextBlock x:Name="statusTxt" Foreground="White"/>
                 </StatusBarItem>
             </StatusBar>
         </DockPanel>
-        <Button Style="{StaticResource SettingButton}" Margin="0,5,10,5" Grid.Column="1" HorizontalAlignment="Right" Width="40"/>
+        <Button Style="{StaticResource SettingButton}" Margin="0,5,10,5" Grid.Column="1" HorizontalAlignment="Right" Width="40" Click="Button_Click"/>
+        <Button Grid.Column="1" 
+      Style="{StaticResource MaterialDesignFloatingActionLightButton}"
+      Margin="455,5,55,5"
+      Command="{Binding SaveCommand}"
+      materialDesign:ButtonProgressAssist.IsIndicatorVisible="{Binding IsSaving}"
+      materialDesign:ButtonProgressAssist.Value="{Binding SaveProgress}" Height="40" Width="40" HorizontalAlignment="Right">
+            <!-- simple example of toggling/animating pack icon with a data trigger-->
+            <materialDesign:PackIcon
+        Height="24"
+        Width="24">
+                <materialDesign:PackIcon.Style>
+                    <Style
+            TargetType="materialDesign:PackIcon"
+            BasedOn="{StaticResource {x:Type materialDesign:PackIcon}}">
+                        <Setter
+              Property="Kind"
+              Value="CloudSync" />
+                        <Style.Triggers>
+                            <DataTrigger
+                Binding="{Binding IsSaveComplete}"
+                Value="True">
+                                <Setter
+                  Property="Kind"
+                  Value="Check" />
+                                <DataTrigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation
+                        Storyboard.TargetProperty="Opacity"
+                        From="0"
+                        To="1"
+                        Duration="0:0:0.8" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </DataTrigger.EnterActions>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </materialDesign:PackIcon.Style>
+            </materialDesign:PackIcon>
+        </Button>
     </Grid>
 </Window>

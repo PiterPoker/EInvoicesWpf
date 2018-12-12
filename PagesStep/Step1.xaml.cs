@@ -1,4 +1,6 @@
-﻿using EInvoicesWpf.PagesStep;
+﻿using EInvoicesWpf.Models;
+using EInvoicesWpf.Models.StepsViewModel;
+using EInvoicesWpf.PagesStep;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,42 +27,30 @@ namespace EInvoicesWpf
         public Step1()
         {
             InitializeComponent();
-        }
-        
-        private void calendar1_MouseMove(object sender, MouseEventArgs e)
-        {
-            cheakDate();
+            DataContext = new CalendarViewModel();
         }
 
-        void cheakDate()
+        public void CombinedDialogClosingEventHandler()
         {
-            if (calendar1.SelectedDates.Count > 0)
-            {
-                if (calendar1.SelectedDates[0].Date > calendar1.SelectedDates[calendar1.SelectedDates.Count - 1].Date)
-                {
-                    DateStart.Content = calendar1.SelectedDates[calendar1.SelectedDates.Count - 1].ToString("dd.MM.yyyy")+" г.";
-                    DateEnd.Content = calendar1.SelectedDates[0].ToString("dd.MM.yyyy") + " г.";
-                }
-                else
-                {
-                    DateEnd.Content = calendar1.SelectedDates[calendar1.SelectedDates.Count - 1].ToString("dd.MM.yyyy") + " г.";
-                    DateStart.Content = calendar1.SelectedDates[0].ToString("dd.MM.yyyy") + " г.";
-                }
-                dokPanelVis.Visibility = Visibility.Visible;
-                Step3.selectedDates = calendar1;
-                if (Mouse.Captured is CalendarItem)
-                { Mouse.Capture(null); }
-            }
+            var combined = calendar1.SelectedDates;
+            ((CalendarViewModel)DataContext).DateTimeList = combined;
+        }
+
+        private void calendar1_MouseMove(object sender, MouseEventArgs e)
+        {
         }
 
         private void calendar1_KeyUp(object sender, KeyEventArgs e)
         {
-            cheakDate();
         }
 
         private void nextBtn_Click(object sender, RoutedEventArgs e)
         {
-            cheakDate();
+            //запихнуть все это в команду
+            var combined = from u in calendar1.SelectedDates
+                           orderby u.Date
+                           select u;
+            ((CalendarViewModel)DataContext).DateTimeList = combined.ToList();
             NavigationService.Navigate(new Uri("/PagesStep/Step2.xaml", UriKind.Relative));
         }
     }

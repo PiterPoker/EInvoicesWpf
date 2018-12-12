@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EInvoicesWpf.Models.StepsViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,20 +26,7 @@ namespace EInvoicesWpf.PagesStep
         public Step3()
         {
             InitializeComponent();
-            ViewDate();
-        }
-
-        void ViewDate() {
-            try
-            {
-                statusDate.Content = selectedDates.SelectedDates[0].ToString("dd.MM.yyyy") + " г.";
-                statusDate.Content += selectedDates.SelectedDates[selectedDates.SelectedDates.Count - 1].ToString("dd.MM.yyyy") + " г.";
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Выберите дату! \n" + ex.Message);
-            }
+            DataContext = new Steps3ViewModel();
         }
 
         private void nextBtn_Click(object sender, RoutedEventArgs e)

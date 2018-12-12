@@ -11,6 +11,8 @@
                 <ResourceDictionary Source="/AppStyle/ButtonPageStyle.xaml"/>
                 <ResourceDictionary Source="/AppStyle/LableStyle.xaml"/>
                 <ResourceDictionary Source="/AppStyle/SettingButton.xaml"/>
+                <ResourceDictionary Source="/AppStyle/DirectoryButton.xaml"/>
+                <ResourceDictionary Source="/AppStyle/ConnectButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

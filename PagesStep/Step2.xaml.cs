@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EInvoicesWpf.Models.StepsViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace EInvoicesWpf.PagesStep
         public Step2()
         {
             InitializeComponent();
+            DataContext = new Steps2ViewModel();
         }
 
         private void nextBtn_Click(object sender, RoutedEventArgs e)

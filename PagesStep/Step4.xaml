@@ -8,20 +8,86 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="Step4">
 
-    <Grid Grid.Column="1" Grid.Row="1" ShowGridLines="True" Background="White">
+    <Grid Grid.Column="1" Grid.Row="1" Background="White">
         <Grid.RowDefinitions>
+            <RowDefinition Height="60*"></RowDefinition>
+            <RowDefinition Height="370*"></RowDefinition>
             <RowDefinition Height="50*"></RowDefinition>
-            <RowDefinition Height="450*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <DockPanel Grid.Row="1" LastChildFill="False" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-            <Button Grid.Row="1" x:Name="backBtn" Click="backBtn_Click" Style="{StaticResource ButtonPageStyle}" Content="Назад" />
+        <DockPanel Grid.Row="2" LastChildFill="False" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+            <Button Visibility="Hidden"  Grid.Row="1" x:Name="backBtn" Click="backBtn_Click" Style="{StaticResource ButtonPageStyle}" Content="Назад" />
             <Button Grid.Row="1" x:Name="nextBtn" Click="nextBtn_Click" Style="{StaticResource ButtonPageStyle}" Content="Далее" />
         </DockPanel>
+        <DockPanel Grid.Row="1" LastChildFill="False">
+            <DockPanel Margin="5" DockPanel.Dock="Top">
+                <TextBlock Margin="5,0,5,0" DockPanel.Dock="Left" Text="Поиск по УНП: " VerticalAlignment="Center"/>
+                <TextBox DockPanel.Dock="Left" Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}" Width="150" />
+                <CheckBox Margin="5,0,5,0" DockPanel.Dock="Left" IsChecked="{Binding Error, UpdateSourceTrigger=PropertyChanged}" Content="ЭСЧФ с ошибками" VerticalAlignment="Center"/>
+                <Button Content="Отчет" Command="{Binding ReportCommand}" HorizontalAlignment="Right" Width="75"/>
+            </DockPanel>
+            <ListBox ItemsSource="{Binding InvocesXML}" MinWidth="300" DockPanel.Dock="Top" MinHeight="240">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="5">
+                            <DockPanel Grid.Row="1" LastChildFill="False">
+                                <DockPanel Margin="5" DockPanel.Dock="Top" LastChildFill="False">
+                                    <DockPanel Margin="2" DockPanel.Dock="Top">
+                                        <TextBlock FontSize="18" Text="Name: " />
+                                        <TextBlock FontSize="18" Text="{Binding Path=Supplier.Name}"/>
+                                    </DockPanel>
+                                </DockPanel>
+                                <DockPanel Margin="5" DockPanel.Dock="Top" LastChildFill="False" VerticalAlignment="Stretch">
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <DockPanel Margin="2" DockPanel.Dock="Left">
+                                            <TextBlock Text="Unp: " />
+                                            <TextBlock Text="{Binding Path=Unp}"/>
+                                        </DockPanel>
+                                        <DockPanel Margin="2" DockPanel.Dock="Left">
+                                            <TextBlock Text="Ttn: " />
+                                            <TextBlock Text="{Binding Path=Ttn}"/>
+                                        </DockPanel>
+                                        <DockPanel Margin="2" DockPanel.Dock="Left">
+                                            <TextBlock Text="Date Transaction: " />
+                                            <TextBlock Text="{Binding Path=DateTransaction}"/>
+                                        </DockPanel>
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <DockPanel Margin="2" DockPanel.Dock="Left">
+                                            <TextBlock Text="TotalCost: " />
+                                            <TextBlock Text="{Binding Path=TotalCost}"/>
+                                        </DockPanel>
+                                        <DockPanel Margin="2" DockPanel.Dock="Left">
+                                            <TextBlock Text="TotalVat: " />
+                                            <TextBlock Text="{Binding Path=TotalVat}"/>
+                                        </DockPanel>
+                                        <DockPanel Margin="2" DockPanel.Dock="Left">
+                                            <TextBlock Text="TotalCostVat: " />
+                                            <TextBlock Text="{Binding Path=TotalCostVat}"/>
+                                        </DockPanel>
+                                    </DockPanel>
+                                    <DockPanel DockPanel.Dock="Top">
+                                        <DockPanel Margin="2" DockPanel.Dock="Top">
+                                            <TextBlock Text="Error: " />
+                                            <TextBlock Text="{Binding Path=Error}"/>
+                                        </DockPanel>
+                                        <DockPanel Margin="2" DockPanel.Dock="Top">
+                                            <TextBlock Text="Message Error: " />
+                                            <TextBlock Text="{Binding Path=ErrorMessage}"/>
+                                        </DockPanel>
+                                    </DockPanel>
+                                </DockPanel>
+                            </DockPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
         <DockPanel Grid.Row="0" LastChildFill="False">
-            <Label Style="{StaticResource LableStyle}" x:Name="DateStart">Step4</Label>
+            <ProgressBar Height="10" IsIndeterminate="{Binding WorkerState}" DockPanel.Dock="Top" Foreground="#FF00AC1F" Background="{x:Null}" />
+            <Label DockPanel.Dock="Top" Style="{StaticResource LableStyle}" Content="{Binding Path = DateLable, UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Center" />
         </DockPanel>
     </Grid>
 </Page>

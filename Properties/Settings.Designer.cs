@@ -43,5 +43,95 @@ namespace EInvoicesWpf.Properties {
                 return ((string)(this["Version"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string path_3torg {
+            get {
+                return ((string)(this["path_3torg"]));
+            }
+            set {
+                this["path_3torg"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string path_60chet {
+            get {
+                return ((string)(this["path_60chet"]));
+            }
+            set {
+                this["path_60chet"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string path_esf {
+            get {
+                return ((string)(this["path_esf"]));
+            }
+            set {
+                this["path_esf"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string sql_request_3torg {
+            get {
+                return ((string)(this["sql_request_3torg"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string sql_request_60chet {
+            get {
+                return ((string)(this["sql_request_60chet"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string sql_request_esf {
+            get {
+                return ((string)(this["sql_request_esf"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\Avest\\AvPCM_nces\\get_crl.bat")]
+        public string path_bat_sos {
+            get {
+                return ((string)(this["path_bat_sos"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("bin\\receive2Dir.bat")]
+        public string path_bat_esf {
+            get {
+                return ((string)(this["path_bat_esf"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("bin\\signAndUploadRecvDir.bat")]
+        public string path_bat_sing {
+            get {
+                return ((string)(this["path_bat_sing"]));
+            }
+        }
     }
 }

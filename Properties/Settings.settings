@@ -8,5 +8,32 @@
     <Setting Name="Version" Type="System.String" Scope="Application">
       <Value Profile="(Default)">0001</Value>
     </Setting>
+    <Setting Name="path_3torg" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="path_60chet" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="path_esf" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="sql_request_3torg" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="sql_request_60chet" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="sql_request_esf" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="path_bat_sos" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\Program Files (x86)\Avest\AvPCM_nces\get_crl.bat</Value>
+    </Setting>
+    <Setting Name="path_bat_esf" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">bin\receive2Dir.bat</Value>
+    </Setting>
+    <Setting Name="path_bat_sing" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">bin\signAndUploadRecvDir.bat</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
